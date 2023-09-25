@@ -6,7 +6,8 @@ const addTodo = async (req, res) => {
     await todoData.save()
     res.status(202).json({
       status: 'success',
-      message: "Data saved successfully"
+      message: "Data saved successfully",
+      data: todoData
     })
   } catch (err) {
     res.status(500).json({
