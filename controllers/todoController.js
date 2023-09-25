@@ -20,7 +20,7 @@ const addTodo = async (req, res) => {
 
 const getAllTodos = async (req, res) => {
   try {
-    const getOrders = await Todo.find()
+    const getOrders = await Todo.find().sort({ createdAt: -1 })
     res.status(201).json({
       status: 'success',
       message: "Successfully get data",

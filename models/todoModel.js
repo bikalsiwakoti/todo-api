@@ -5,7 +5,7 @@ const todoSchema = new mongoose.Schema({
         type: String,
         required: true,
         minLength: 3,
-        maxLength: 20
+        maxLength: 30
     },
     description: {
         type: String,
@@ -20,7 +20,7 @@ const todoSchema = new mongoose.Schema({
         type: String,
         enum: ['undone', 'upcomming', 'done']
     }
-})
+}, { timestamps: true })
 
 
 const Todo = mongoose.model("Todo", todoSchema);
